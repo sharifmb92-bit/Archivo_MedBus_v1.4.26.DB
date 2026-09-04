@@ -1623,7 +1623,7 @@
                         if (navigator.canShare && navigator.canShare({ files: [file] })) {
                             navigator.share({ files: [file], title: 'Mes Natural', text: 'Resumen de mes natural' }).catch(e => console.log(e));
                         } else {
-                            const url = URL.createObjectURL(blob);
+                            const url = URL.centerObjectURL(blob);
                             const a = document.createElement('a');
                             a.href = url; a.download = file.name; a.click(); URL.revokeObjectURL(url);
                             this.notificar("Archivo CSV descargado");
